@@ -68,7 +68,8 @@ export async function POST(req, res) {
                     caption: output.split(":")[1], user_id: userId
                 }])
             :
-            await supabase.from("images_edited").insert([{ canvas_id: canvas, url: output }])
+            await supabase.from("images_edited")
+                .insert([{ canvas_id: canvas, url: output }])
         return NextResponse.json(output ? output : "Failed to retreive");
     } catch (error) {
         return NextResponse.json({ error: error }, { status: 400 });
