@@ -4,7 +4,6 @@ import Replicate from "replicate";
 
 const replicate = new Replicate({
     auth: `${process.env.REPLICATE_API_TOKEN}`,
-    // auth: "r8_8zzTr4ip96Fd1pkNgHtwflBiIdDFr4Y2WvYy8"
 });
 
 export async function POST(req, res) {
