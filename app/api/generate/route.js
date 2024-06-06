@@ -43,13 +43,13 @@ export async function POST(req, res) {
                 await new Promise((resolve) => setTimeout(resolve, 3000));
             }
         }
-        output.forEach(async (url) => {
+        for (const url of output) {
             await supabase.from("images_created")
                 .insert([{
                     canvas_id: canvas, url,
                     prompt, filter: imageParams.filter, user_id: userId
                 }])
-        })
+        }
         return NextResponse.json(output ? output : "Failed to retreive");
     } catch (error) {
         return NextResponse.json({ error: error }, { status: 400 });
