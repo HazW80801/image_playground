@@ -207,7 +207,7 @@ export default function CanvasPage() {
                             </SelectTrigger>
                             <SelectContent className="bg-black text-white">
                                 {filters.map(filter => (
-                                    <SelectItem value={filter.value}
+                                    <SelectItem key={filter} value={filter.value}
                                         className="text-white cursor-pointer">{filter.name}</SelectItem>
                                 ))}
                             </SelectContent>
@@ -343,6 +343,7 @@ export default function CanvasPage() {
                             {createdImages.map(image =>
                             (
                                 <img
+                                    key={image.id}
                                     onClick={() => {
                                         setSelectedImage(image);
                                         setPrompt(image.prompt);
@@ -374,7 +375,9 @@ export default function CanvasPage() {
                                     object-center object-contain border border-white/20
                                      ${selectedImage.url === image.url && "opacity-50"}`}
                                 />) : (
-                                    <div className=" text-white py-12 min-w-[300px] min-h-[300px]
+                                    <div
+                                        key={image.id}
+                                        className=" text-white py-12 min-w-[300px] min-h-[300px]
                                     items-center justify-center flex border border-white/20 px-6 relative">
                                         <p className="w-full">
                                             {image.caption}
@@ -404,7 +407,7 @@ export default function CanvasPage() {
                             </SelectTrigger>
                             <SelectContent className="bg-black text-white">
                                 {models.map(model => (
-                                    <SelectItem value={model.version}
+                                    <SelectItem key={model} value={model.version}
                                         className="text-white cursor-pointer">{model.name}</SelectItem>
                                 ))}
                             </SelectContent>
@@ -418,6 +421,7 @@ export default function CanvasPage() {
                         <div className="grid grid-cols-2 gap-3">
                             {dimensions.map(dimension => (
                                 <div
+                                    key={dimension}
                                     onClick={() => setImageParams(curr => ({ ...curr, dimension }))}
                                     className={`text-sm px-4 py-1 border border-white/10 items-center hover:bg-white/50 hover:text-black smooth cursor-pointer
                                     justify-center flex ${(imageParams.dimension.height == dimension.height
@@ -449,6 +453,7 @@ export default function CanvasPage() {
                         <div className="grid grid-cols-2 gap-3">
                             {imagesNumbers.map(number => (
                                 <div
+                                    key={number}
                                     onClick={() => setImageParams(curr => ({
                                         ...curr,
                                         number: number.name
