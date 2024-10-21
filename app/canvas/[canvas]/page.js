@@ -62,7 +62,7 @@ let models = [
   },
   {
     name: "bytedance/sdxl-lightning",
-    version: "5599ed30703defd1d160a25a63321b4dec97101d98b4674bcc56e41f62f35637",
+    version: "727e49a643e999d602a896c774a0658ffefea21465756a6ce24b7ea4165eba6a",
   },
   {
     name: "stable-diffusion XL",
