@@ -50,6 +50,7 @@ export async function POST(req, res) {
                     }
                 } : null
 
+
         const startResponse = await replicate.predictions.create(details);
         let Response_Id = startResponse.id;
         let output = null;
@@ -75,6 +76,6 @@ export async function POST(req, res) {
                 .insert([{ canvas_id: canvas, url: output }])
         return NextResponse.json(output ? output : "Failed to retreive");
     } catch (error) {
-        return NextResponse.json({ error: error }, { status: 400 });
+        return NextResponse.json({ error: error.message }, { status: 400 });
     }
 }

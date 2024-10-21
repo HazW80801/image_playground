@@ -13,7 +13,8 @@ export default function DashboardPage() {
     const router = useRouter()
     const id = uuidv4()
     const createNewCanvas = async () => {
-        await supabase.from("canvas").insert([{ canvas_id: id, user_id: user.id }]).select()
+        await supabase.from("canvas")
+            .insert([{ canvas_id: id, user_id: user.id }]).select()
         router.replace(`/canvas/${id}`)
     }
     const [canvasItems, setCanvasItems] = useState([])

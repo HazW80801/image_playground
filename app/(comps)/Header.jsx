@@ -29,7 +29,8 @@ export default function Header() {
                         </div>
                     }
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-black text-white border-white border-white/10">
+                <DropdownMenuContent className="bg-black text-white
+                 border-white border-white/10">
                     <Link href={"/dashboard"} >
                         <DropdownMenuItem className="dropmenu_item">
                             dashboard

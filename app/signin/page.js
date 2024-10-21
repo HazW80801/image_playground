@@ -9,7 +9,8 @@ export default function SignInPage() {
         })
     }
     return (
-        <div className="min-h-[100vh] bg-black flex items-center justify-center w-full p-12 ">
+        <div className="min-h-[100vh] bg-black flex
+         items-center justify-center w-full p-12 ">
             <button onClick={signInUser} className="button">signIn with google</button>
         </div>
     )
